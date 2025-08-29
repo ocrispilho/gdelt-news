@@ -15,8 +15,11 @@ SMTP_PORT = 587
 
 # === CONFIGURAÇÕES DA BUSCA ===
 MAXRECORDS = 50  # quantidade máxima de notícias
-QUERY_BRASIL = 'shoppertainment sourcecountry:BR'
-QUERY_MUNDO = 'shoppertainment -sourcecountry:BR'
+SEARCH_TERMS = '(shoppertainment OR "social commerce" OR "tiktok shop" OR "live streaming" OR "live commerce" OR "shopee live")'
+
+QUERY_BRASIL = f'{SEARCH_TERMS} sourcecountry:BR'
+QUERY_MUNDO = f'{SEARCH_TERMS} -sourcecountry:BR'
+
 
 # === FUNÇÃO PARA PEGAR NOTÍCIAS DO GDELT ===
 def get_gdelt_news(query, startdate, enddate, maxrecords=MAXRECORDS):
@@ -84,3 +87,4 @@ if __name__ == "__main__":
     send_email(news_brasil, news_mundo)
 
     print("E-mail enviado com notícias de ontem (Brasil + Mundo).")
+

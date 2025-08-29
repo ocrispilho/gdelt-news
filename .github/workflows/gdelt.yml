@@ -28,5 +28,6 @@ jobs:
         env:
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          EMAIL_TO_2: ${{ secrets.EMAIL_TO_2 }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
         run: python ./gdelt-news2.py

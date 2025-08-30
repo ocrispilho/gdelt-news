@@ -8,7 +8,7 @@ from email.mime.multipart import MIMEMultipart
 
 # === CONFIGURAÇÕES DO EMAIL (via Secrets do GitHub) ===
 EMAIL_FROM = os.environ["EMAIL_FROM"]
-EMAIL_TO = os.environ["EMAIL_TO"]
+EMAIL_TO = f"{os.environ['EMAIL_TO']},{os.environ['EMAIL_TO_2']}"
 EMAIL_PASS = os.environ["EMAIL_PASS"]
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
@@ -87,4 +87,5 @@ if __name__ == "__main__":
     send_email(news_brasil, news_mundo)
 
     print("E-mail enviado com notícias de ontem (Brasil + Mundo).")
+
 

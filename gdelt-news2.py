@@ -15,7 +15,7 @@ SMTP_PORT = 587
 
 # === CONFIGURAÇÕES DA BUSCA ===
 MAXRECORDS = 50  # quantidade máxima de notícias
-SEARCH_TERMS = '(SEARCH_TERMS = '("shoppertainment" OR "social commerce" OR "tiktok shop" OR "live streaming" OR "live commerce" OR "shopee live")')'
+SEARCH_TERMS = '("shoppertainment" OR "social commerce" OR "tiktok shop" OR "live streaming" OR "live commerce" OR "shopee live")'
 
 QUERY_BRASIL = f'{SEARCH_TERMS} sourcecountry:BR'
 QUERY_MUNDO = f'{SEARCH_TERMS} -sourcecountry:BR'
@@ -87,6 +87,7 @@ if __name__ == "__main__":
     send_email(news_brasil, news_mundo)
 
     print("E-mail enviado com notícias de ontem (Brasil + Mundo).")
+
 
 
 
